@@ -18,21 +18,11 @@ export default function RegretNFT() {
   ];
 
   const utilities = [
-    { label: "Utility", value: "Proof of Survival" },
-    { label: "Holder Badge", value: "Proof of Regret" },
-    { label: "Collection Motto", value: "Badge of Conviction" },
-    { label: "Community Identity", value: "Lifetime Membership" },
-    { label: "Recognition for Holders", value: "Every Scar Tells a Story" }
-  ];
-
-  const emotionalRarities = [
-    { name: "FOMO Survivor", emoji: "🟢", rate: "25%", desc: "Surviving peak hype entry points." },
-    { name: "Paper Hands", emoji: "🔴", rate: "20%", desc: "Panic-sold within minutes of entry." },
-    { name: "Diamond Hands", emoji: "🟣", rate: "15%", desc: "Held all the way down to -99% drawdowns." },
-    { name: "Exit Liquidity", emoji: "🟡", rate: "12%", desc: "Provided the bid for smarter players." },
-    { name: "Rug Survivor", emoji: "⚫", rate: "18%", desc: "Experienced multiple zero-value events." },
-    { name: "Top Buyer", emoji: "🔥", rate: "8%", desc: "Bought the absolute exact local top." },
-    { name: "Ghost Wallet", emoji: "👻", rate: "2%", desc: "Lost keys or seeds; forever locked." },
+    "Proof of Survival",
+    "Proof of Regret",
+    "Badge of Conviction",
+    "Lifetime membership",
+    "Every Scar Tells a Story"
   ];
 
   const conceptualDrafts = [
@@ -188,49 +178,16 @@ export default function RegretNFT() {
                 </div>
 
                 <div className="md:col-span-6 space-y-3 border-t md:border-t-0 md:border-l border-[#454545] pt-4 md:pt-0 md:pl-6">
-                  <span className="font-mono text-xs text-[#FF3B30] tracking-widest uppercase block mb-2 font-black">// UTILITY & PROFILE</span>
-                  <div className="space-y-2.5 font-mono text-xs">
+                  <span className="font-mono text-xs text-[#FF3B30] tracking-widest uppercase block mb-2 font-black">// UTILITY VALUES</span>
+                  <ul className="space-y-2 font-mono text-xs text-[#E2E2E2]">
                     {utilities.map((util, idx) => (
-                      <div key={idx} className="flex justify-between items-start border-b border-[#1E1E20] pb-1.5 last:border-0 last:pb-0">
-                        <span className="text-[#6978a0] tracking-wider uppercase mr-2">{util.label}</span>
-                        <span className="text-[#E2E2E2] font-bold tracking-tight text-right uppercase">{util.value}</span>
-                      </div>
+                      <li key={idx} className="flex items-center gap-2 text-[#E2E2E2]/90">
+                        <span className="text-[#FF3B30] font-black">•</span>
+                        <span className="uppercase tracking-tight">{util}</span>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
-              </div>
-            </div>
-
-            {/* Emotion-Based Rarity Tiers */}
-            <div className="border-[4px] border-[#454545] bg-[#0A0A0B]/60 p-6 md:p-8 space-y-6">
-              <div className="flex items-center gap-3 border-b border-[#454545] pb-4">
-                <Layers className="w-5 h-5 text-[#FF3B30]" />
-                <h4 className="font-mono text-xs text-[#E2E2E2] font-bold uppercase tracking-widest">
-                  EMOTIONAL RARITY SPECTRUM
-                </h4>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                {emotionalRarities.map((rarity, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-[#0F0F10] border-2 border-[#454545] p-3 flex items-center justify-between gap-4 hover:border-[#FF3B30]/40 transition-colors duration-300"
-                  >
-                    <div className="flex items-center gap-3 min-w-0">
-                      <span className="text-xl shrink-0 select-none">{rarity.emoji}</span>
-                      <div className="min-w-0">
-                        <div className="font-display text-xs text-white font-black uppercase tracking-tight truncate">
-                          {rarity.name}
-                        </div>
-                        <p className="font-mono text-[10px] text-[#6978a0] leading-snug truncate">
-                          {rarity.desc}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="font-mono text-[10px] text-[#FF3B30] font-black shrink-0 bg-[#FF3B30]/5 border border-[#FF3B30]/20 px-2 py-0.5">
-                      {rarity.rate}
-                    </div>
-                  </div>
-                ))}
               </div>
             </div>
 
