@@ -5,7 +5,7 @@
 
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { Coins, Flame, ShieldCheck, Heart, Users, Landmark, HeartCrack } from "lucide-react";
+import { Coins, Flame, ShieldCheck, Heart, Users, Landmark, HeartCrack, Droplets, Wrench, Megaphone, Gift, Lock } from "lucide-react";
 
 interface TokenAllocation {
   value: number;
@@ -66,9 +66,9 @@ export default function Tokenomics() {
 
   const allocations: TokenAllocation[] = [
     {
-      value: 40,
-      label: "Community & Growth",
-      subLabel: "Marketing, partnerships, community rewards",
+      value: 30,
+      label: "Community & Ecosystem",
+      subLabel: "Ecosystem development, community growth & incentives",
       color: "#F2A900", // Gold
       glowColor: "rgba(242, 169, 0, 0.4)",
       icon: Users,
@@ -76,34 +76,50 @@ export default function Tokenomics() {
     {
       value: 20,
       label: "Liquidity",
-      subLabel: "Locked liquidity for stability",
+      subLabel: "Locked liquidity pool for DEX & CEX trading stability",
       color: "#00E676", // Mint Green
       glowColor: "rgba(0, 230, 118, 0.4)",
-      icon: Flame,
+      icon: Droplets,
     },
     {
       value: 15,
-      label: "Treasury",
-      subLabel: "Project development & operations",
+      label: "Project Development & Operations",
+      subLabel: "Core infrastructure, operations & protocol enhancement",
       color: "#9333EA", // Purple/Violet
       glowColor: "rgba(147, 51, 234, 0.4)",
-      icon: Landmark,
+      icon: Wrench,
     },
     {
-      value: 15,
-      label: "Charity",
-      subLabel: "Giving back to the community & global causes",
+      value: 10,
+      label: "Charity Treasury",
+      subLabel: "Dedicated to mental health support & regret-relief initiatives",
       color: "#FF3B30", // Red
       glowColor: "rgba(255, 59, 48, 0.4)",
       icon: Heart,
     },
     {
       value: 10,
+      label: "Marketing & Partnerships",
+      subLabel: "Strategic campaigns, integrations & global brand footprint",
+      color: "#38BDF8", // Sky Blue
+      glowColor: "rgba(56, 189, 248, 0.4)",
+      icon: Megaphone,
+    },
+    {
+      value: 10,
+      label: "NFT Holder Airdrops & Rewards",
+      subLabel: "Direct rewards, exclusive perks, and airdrops to NFT holders",
+      color: "#F472B6", // Pink
+      glowColor: "rgba(244, 114, 182, 0.4)",
+      icon: Gift,
+    },
+    {
+      value: 5,
       label: "Team",
-      subLabel: "Core team & contributors (Locked on Streamflow for 3 months)",
+      subLabel: "30% released at launch, with the remaining released every 2 months for 1 year on Streamflow",
       color: "#94A3B8", // Slate Gray
       glowColor: "rgba(148, 163, 184, 0.4)",
-      icon: ShieldCheck,
+      icon: Lock,
     },
   ];
 
