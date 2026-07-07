@@ -25,24 +25,48 @@ export default function RegretNFT() {
     "Every Scar Tells a Story"
   ];
 
-  const conceptualDrafts = [
+  const emotionalRarities = [
     {
-      title: "ATH Buyers Club",
-      desc: "Generative pieces representing the exact millisecond before the top-candle local max.",
-      tier: "LEGENDARY",
-      color: "#F2A900", // Gold
+      emoji: "🟢",
+      label: "FOMO Survivor",
+      color: "#00E676",
+      description: "Minted during absolute peak velocity, survived the inevitable 90% correction."
     },
     {
-      title: "The Panic Sellers",
-      desc: "Dynamic digital art that turns into a green rocket emoji only after you have sold.",
-      tier: "EPIC",
-      color: "#FF3B30", // Red
+      emoji: "🔴",
+      label: "Paper Hands",
+      color: "#FF3B30",
+      description: "Sold at the exact bottom, right before a 100x candle. An absolute classic."
     },
     {
-      title: "Liquidated Souls",
-      desc: "Interactive canvas featuring real-time generated screaming charts from high-leverage trades.",
-      tier: "RARE",
-      color: "#00E676", // Mint Green
+      emoji: "🟣",
+      label: "Diamond Hands",
+      color: "#9333EA",
+      description: "Held from peak to absolute zero. Never sold, never surrendered, never profited."
+    },
+    {
+      emoji: "🟡",
+      label: "Exit Liquidity",
+      color: "#F2A900",
+      description: "The ultimate counter-party. Gracefully bought bags from developers' wallets at 3 AM."
+    },
+    {
+      emoji: "⚫",
+      label: "Rug Survivor",
+      color: "#4B5563",
+      description: "Experienced the pure rush of dynamic smart contract rugpulls and lived to tell the story."
+    },
+    {
+      emoji: "🔥",
+      label: "Top Buyer",
+      color: "#F97316",
+      description: "Bought the absolute local ATH peak candle down to the exact Satoshi."
+    },
+    {
+      emoji: "👻",
+      label: "Ghost Wallet",
+      color: "#38BDF8",
+      description: "Forgotten private keys, compromised seed phrases, or pure silent watch-only watchlists."
     }
   ];
 
@@ -155,8 +179,8 @@ export default function RegretNFT() {
             </motion.div>
           </div>
 
-          {/* Column 2: Specific Metadata & Conceptual Concepts (Right) */}
-          <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
+          {/* Column 2: Specific Metadata & Utilities (Right) */}
+          <div className="lg:col-span-7 flex flex-col justify-center">
             
             {/* Metadata Status Panel */}
             <div className="border-[4px] border-[#454545] bg-[#0A0A0B]/60 p-6 md:p-8 space-y-6">
@@ -191,50 +215,59 @@ export default function RegretNFT() {
               </div>
             </div>
 
-            {/* Concept Drafts / Collection Previews */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-2 px-2">
-                <AlertCircle className="w-4 h-4 text-[#FF3B30]" />
-                <span className="font-mono text-[10px] text-[#6978a0] uppercase tracking-widest">
-                  PROPOSED NFT COLLECTIONS
-                </span>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {conceptualDrafts.map((draft, idx) => (
-                  <div
-                    key={idx}
-                    className="border-2 border-[#454545] bg-[#0F0F10] p-4 flex flex-col justify-between hover:border-white/40 transition-colors duration-300"
-                  >
-                    <div>
-                      <div className="flex justify-between items-start mb-2">
-                        <span
-                          className="font-mono text-[9px] font-extrabold px-2 py-0.5 border"
-                          style={{ borderColor: `${draft.color}40`, color: draft.color, backgroundColor: `${draft.color}10` }}
-                        >
-                          {draft.tier}
-                        </span>
-                      </div>
-                      <h5 className="text-display text-sm text-white font-extrabold uppercase tracking-tight mb-1">
-                        {draft.title}
-                      </h5>
-                      <p className="font-mono text-[11px] text-[#6978a0] leading-relaxed">
-                        {draft.desc}
-                      </p>
-                    </div>
-
-                    <div className="mt-4 pt-3 border-t border-[#1E1E20] flex items-center justify-between font-mono text-[9px] text-[#6978a0]">
-                      <span>MINT DATE</span>
-                      <span className="text-[#FF3B30] font-bold">TBD</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
           </div>
 
         </div>
+
+        {/* Emotional Rarity Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-16 pt-16 border-t border-[#1E1E20]"
+        >
+          <div className="mb-10">
+            <span className="font-mono text-xs text-[#FF3B30] tracking-widest uppercase block mb-2 font-black">
+              // EMOTIONAL METRICS
+            </span>
+            <h3 className="text-display text-2xl md:text-3xl text-[#E2E2E2] font-extrabold uppercase tracking-tight">
+              RARITY TIED TO EMOTIONS
+            </h3>
+            <p className="font-mono text-xs text-[#6978a0] leading-relaxed max-w-2xl mt-2">
+              Every item in the collection is dynamically minted with a unique rarity class corresponding to the psychological states of the modern degenerate trader.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {emotionalRarities.map((item, idx) => (
+              <div
+                key={idx}
+                className="border-2 border-[#454545] bg-[#0F0F10] p-5 relative overflow-hidden group hover:border-[#FF3B30]/50 transition-all duration-300"
+              >
+                {/* Micro corner highlight */}
+                <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-transparent group-hover:border-[#FF3B30] transition-colors" />
+                
+                <div className="flex items-start gap-4">
+                  <div className="text-2xl select-none filter drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] py-1">
+                    {item.emoji}
+                  </div>
+                  <div className="space-y-1">
+                    <h4 className="font-mono text-xs text-white font-extrabold tracking-wider uppercase flex items-center gap-1.5">
+                      {item.label}
+                      <span className="text-[8px] px-1 py-0.2 border border-[#454545] text-[#6978a0] group-hover:text-white group-hover:border-[#FF3B30]/30 transition-colors">
+                        CLASS-{idx + 1}
+                      </span>
+                    </h4>
+                    <p className="font-mono text-[11px] text-[#6978a0] leading-normal group-hover:text-[#E2E2E2]/80 transition-colors duration-300">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Global Warning Footer Accent */}
         <div className="mt-12 border-2 border-dashed border-[#FF3B30]/30 bg-[#FF3B30]/5 p-4 flex items-center gap-4">

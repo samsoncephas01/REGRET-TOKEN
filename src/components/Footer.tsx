@@ -47,9 +47,29 @@ export default function Footer() {
               <p className="text-display text-2xl md:text-3xl text-[#E2E2E2] tracking-tighter select-none font-bold">
                 The only bag everyone already owns.
               </p>
-              <p className="font-mono text-xs text-[#6978a0] leading-relaxed max-w-xl">
-                No roadmap. No utility. No promises. Just emotional damage. $REGRET is a meme coin with absolutely no intrinsic value, built on Solana. It is created for entertainment, emotional validation, and collective trading hindsight. This is not financial advice. You already knew that.
-              </p>
+              <div className="font-mono text-xs text-[#6978a0] leading-relaxed max-w-xl space-y-3">
+                <p>
+                  REGRET is more than a meme coin. It's a community built around the one emotion every trader understands.
+                </p>
+                <p>
+                  Every missed opportunity, every early sale, every bad trade, every lesson—these moments connect us more than any chart ever could.
+                </p>
+                <p>
+                  We're building a place where those stories become culture, where lessons become conviction, and where a shared emotion becomes a lasting community.
+                </p>
+                <p>
+                  REGRET exists to bring people together through storytelling, memes, NFTs, community initiatives, and meaningful experiences on Solana.
+                </p>
+                <p>
+                  We're not promising overnight riches. We're building something people can genuinely relate to.
+                </p>
+                <p className="text-[#E2E2E2] font-semibold">
+                  Every trader has a story. Every story has a regret.
+                </p>
+                <p className="text-[#FF3B30] font-bold">
+                  We all have it. Now we tokenize it.
+                </p>
+              </div>
             </div>
 
             {/* Socials Link Columns */}
@@ -68,7 +88,7 @@ export default function Footer() {
                   <span>X / TWITTER</span>
                 </a>
                 <a
-                  href="https://t.me/REGRET_all"
+                  href="https://t.me/REGRET_TOKEN"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-[#E2E2E2]/60 hover:text-[#FF3B30] transition-colors focus:outline-none w-fit group"
