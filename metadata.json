@@ -1,0 +1,6 @@
+{
+  "name": "$REGRET",
+  "description": "The ultimate digital confessional for crypto traders. Tokenizing the universal experience of missed opportunity and hindsight through a brutalist, cinematic, and minimalist monument to emotional damage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

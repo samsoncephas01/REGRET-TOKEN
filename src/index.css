@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,700;0,800;0,900;1,400&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-body: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  --white-color: #fff;
+  --brand-color-100: #f3f6ff;
+  --brand-color-200: #e0e7ff;
+  --brand-color-300: #a8bcff;
+  --brand-color-400: #2559ff;
+  --brand-color-500: #1149ff;
+  --brand-color-600: #073ce9;
+  --gray-color-50: #f8f8f8;
+  --gray-color-100: #dbe2f4;
+  --gray-color-200: #b4c1e3;
+  --gray-color-300: #6978a0;
+  --gray-color-400: #3d4666;
+  --gray-color-500: #0d1942;
+  --orange-color-100: #fff0e9;
+  --orange-color-200: #ffd8c3;
+  --orange-color-300: #f6b18c;
+  --teal-color-100: #f3fdff;
+  --teal-color-200: #82d8eb;
+  --teal-color-300: #1592ae;
+  --green-color-100: #dafff4;
+  --green-color-200: #abefda;
+  --green-color-300: #57c9a6;
+  --green-color-400: #1aaa7e;
+  --yellow-color-100: #fff8ef;
+  --yellow-color-200: #ffd19d;
+  --yellow-color-300: #f2a44d;
+  --yellow-color-400: #d78121;
+  --purple-color-100: #f3efff;
+  --purple-color-200: #b499ff;
+  --purple-color-300: #6a3cff;
+  --red-color-100: #ffe6e5;
+  --red-color-200: #ffa6a4;
+  --red-color-300: #ff443f;
+  --red-color-400: #da2722;
+  --twitch-color-100: #f6f1ff;
+  --twitch-color-200: #9150fb;
+  --twitch-color-300: #7738e5;
+  --reddit-color-100: #ffe1da;
+  --reddit-color-200: #fc471e;
+  --reddit-color-300: #f34118;
+  --discord-color-100: #dfe3ff;
+  --discord-color-200: #4e63ef;
+  --discord-color-300: #283dc5;
+  --youtube-color-100: #ffebec;
+  --youtube-color-200: #fc0d1b;
+  --youtube-color-300: #ee0714;
+  --facebook-color-100: #d4e7ff;
+  --facebook-color-200: #1877f2;
+  --facebook-color-300: #0469eb;
+  --instagram-color-100: #ffe5ec;
+  --instagram-color-200: #ffa5ba;
+  --instagram-color-300: #ff84a1;
+  
+  --background: 0 0% 4%;
+  --foreground: 0 0% 89%;
+  --card: 0 0% 6%;
+  --card-foreground: 0 0% 89%;
+  --popover: 0 0% 6%;
+  --popover-foreground: 0 0% 89%;
+  --primary: 0 84% 60%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 12%;
+  --secondary-foreground: 0 0% 89%;
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 45%;
+  --accent: 0 0% 27%;
+  --accent-foreground: 0 0% 89%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 27%;
+  --input: 0 0% 14%;
+  --ring: 0 84% 60%;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0A0A0B;
+  color: #E2E2E2;
+}
+
+body {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
+.text-display {
+  font-family: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.heavy-rule {
+  border-top: 4px solid #454545;
+}
+
+.heavy-rule-red {
+  border-top: 4px solid #FF3B30;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0B;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF3B30;
+}
