@@ -10,6 +10,7 @@ import Narrative from "./components/Narrative";
 import Motto from "./components/Motto";
 import Ticker from "./components/Ticker";
 import Tokenomics from "./components/Tokenomics";
+import Roadmap from "./components/Roadmap";
 import Charity from "./components/Charity";
 import WorldRegretDay from "./components/WorldRegretDay";
 import RegretNFT from "./components/RegretNFT";
@@ -30,9 +31,11 @@ export default function App() {
         <Motto />
         <Ticker />
         <Tokenomics />
+        <Roadmap />
         <Charity />
         <WorldRegretDay />
         <RegretNFT />
+        <Roadmap />
         <Terminal />
       </main>
 

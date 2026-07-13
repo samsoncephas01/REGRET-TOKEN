@@ -104,6 +104,13 @@ export default function Navbar() {
             REGRET NFT
           </button>
           <button
+            id="nav-btn-roadmap"
+            onClick={() => scrollToSection("roadmap")}
+            className="font-mono text-xs tracking-[0.2em] text-[#E2E2E2]/60 hover:text-[#E2E2E2] transition-colors focus:outline-none cursor-pointer"
+          >
+            ROADMAP
+          </button>
+          <button
             id="nav-btn-buy"
             onClick={() => scrollToSection("terminal")}
             className="font-mono text-xs tracking-[0.2em] text-[#FF3B30] hover:text-[#E2E2E2] font-semibold transition-colors focus:outline-none cursor-pointer"
@@ -169,6 +176,13 @@ export default function Navbar() {
                 className="text-left text-sm tracking-widest text-[#E2E2E2]/70 hover:text-[#FF3B30] transition-colors py-1"
               >
                 // REGRET NFT
+              </button>
+              <button
+                id="mob-nav-roadmap"
+                onClick={() => scrollToSection("roadmap")}
+                className="text-left text-sm tracking-widest text-[#E2E2E2]/70 hover:text-[#FF3B30] transition-colors py-1"
+              >
+                // ROADMAP
               </button>
               <button
                 id="mob-nav-terminal"
