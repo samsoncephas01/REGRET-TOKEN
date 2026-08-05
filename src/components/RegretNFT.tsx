@@ -6,6 +6,7 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Sparkles, HelpCircle, AlertCircle, Eye, RefreshCw, Layers } from "lucide-react";
+import regretCharacterImg from "../assets/images/regret_nft_character_1785963436470.jpg";
 
 export default function RegretNFT() {
   const [glitch, setGlitch] = useState(false);
@@ -130,15 +131,15 @@ export default function RegretNFT() {
               </div>
 
               {/* Holographic / Wireframe Canvas Area */}
-              <div className="aspect-square bg-[#070708] border-2 border-[#454545] relative overflow-hidden flex items-center justify-center p-8 group">
+              <div className="aspect-square bg-[#070708] border-2 border-[#454545] relative overflow-hidden flex items-center justify-center group">
                 {/* Rotating holographic grids */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f1f22_1px,transparent_1px),linear-gradient(to_bottom,#1f1f22_1px,transparent_1px)] bg-[size:24px_24px] opacity-30" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f1f22_1px,transparent_1px),linear-gradient(to_bottom,#1f1f22_1px,transparent_1px)] bg-[size:24px_24px] opacity-30 z-10 pointer-events-none" />
                 
                 {/* Animated rotating concentric shapes */}
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                  className="absolute w-4/5 h-4/5 rounded-full border border-dashed border-[#FF3B30]/20 flex items-center justify-center"
+                  className="absolute w-4/5 h-4/5 rounded-full border border-dashed border-[#FF3B30]/30 flex items-center justify-center z-10 pointer-events-none"
                 >
                   <motion.div
                     animate={{ rotate: -360 }}
@@ -147,23 +148,29 @@ export default function RegretNFT() {
                   />
                 </motion.div>
 
-                {/* Main Glitch/Interactive Core Graphic */}
-                <div className="relative text-center z-10 transition-transform duration-300 group-hover:scale-105">
-                  <div className="text-display text-7xl font-extrabold tracking-widest text-[#E2E2E2]/10 select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                    NFT
+                {/* Main Hologram Character Image */}
+                <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+                  <img
+                    src={regretCharacterImg}
+                    alt="REGRET NFT Character Hologram"
+                    referrerPolicy="no-referrer"
+                    className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-105 ${
+                      glitch ? "brightness-125 contrast-150 saturate-150 translate-x-1" : "contrast-110"
+                    }`}
+                  />
+                  
+                  {/* Hologram HUD Overlay Badge */}
+                  <div className="absolute bottom-3 left-3 right-3 z-20 flex items-center justify-between bg-[#0A0A0B]/85 backdrop-blur-md px-3 py-1.5 border border-[#454545]">
+                    <span className="font-mono text-[10px] text-[#00E676] font-bold tracking-widest uppercase flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#00E676] animate-ping" />
+                      HOLOGRAM // GENESIS #001
+                    </span>
+                    <span className="font-mono text-[9px] text-[#6978a0]">3D_RENDER</span>
                   </div>
-                  
-                  <Layers className={`w-20 h-20 mx-auto transition-colors duration-300 ${
-                    glitch ? "text-[#FF3B30]" : "text-[#454545] group-hover:text-[#F2A900]"
-                  }`} />
-                  
-                  <p className="font-mono text-[10px] text-[#6978a0] tracking-widest mt-4 uppercase">
-                    Hologram Placeholder
-                  </p>
                 </div>
 
                 {/* Scanline Effect overlay */}
-                <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.03),rgba(0,255,0,0.01),rgba(0,0,255,0.03))] bg-[size:100%_4px,6px_100%]" />
+                <div className="absolute inset-0 pointer-events-none z-20 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.03),rgba(0,255,0,0.01),rgba(0,0,255,0.03))] bg-[size:100%_4px,6px_100%]" />
               </div>
 
               {/* Bottom NFT Name & Creator */}
