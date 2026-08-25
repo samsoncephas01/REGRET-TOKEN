@@ -5,7 +5,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { Heart, BookOpen, GraduationCap, Store, ShieldCheck, HelpCircle } from "lucide-react";
+import { Heart, Brain, GraduationCap, HeartHandshake, ShieldCheck, Sparkles, Activity } from "lucide-react";
 
 export default function Charity() {
   return (
@@ -29,11 +29,11 @@ export default function Charity() {
             className="inline-flex items-center gap-2 px-4 py-1.5 border border-[#FF3B30]/30 bg-[#FF3B30]/5 text-[#FF3B30] font-mono text-xs uppercase tracking-widest font-bold"
           >
             <Heart className="w-4 h-4 fill-[#FF3B30] animate-pulse" />
-            REGRET Gives Back
+            REGRET Gives Back // Mental Health Resilience
           </motion.div>
           
           <h2 className="text-display text-4xl md:text-6xl text-[#E2E2E2] tracking-tighter uppercase font-extrabold">
-            Turning REGRET into Opportunity
+            Turning REGRET into Resilience
           </h2>
           <div className="w-20 h-1 bg-[#FF3B30] mx-auto mt-4" />
         </div>
@@ -58,7 +58,7 @@ export default function Charity() {
               "We can't undo the opportunities we missed."
             </p>
             <p className="font-bold text-[#FF3B30] text-base md:text-lg pt-2">
-              But together, we can create opportunities for someone else.
+              But together, we can empower youth with mental strength and resilience.
             </p>
           </motion.div>
 
@@ -70,100 +70,114 @@ export default function Charity() {
             className="lg:col-span-6 bg-[#0F0F10] border-2 border-[#454545] p-6 md:p-8 font-mono text-xs md:text-sm text-[#6978a0] leading-relaxed relative overflow-hidden"
           >
             <p>
-              At REGRET, we believe every mistake can inspire something meaningful. That's why a portion of the creator rewards will be dedicated to charitable initiatives that improve lives and create brighter futures.
+              At REGRET, we recognize that emotional volatility, burnout, and mental anguish are real battles. That's why a dedicated 10% Charity Treasury and creator rewards are channeled directly toward youth mental health resilience programs, counseling initiatives, and charitable wellness courses.
             </p>
           </motion.div>
 
         </div>
 
-        {/* Commitment Cards Grid */}
+        {/* Commitment Cards Grid: Mental Health Resilience Youth Charitable Cause */}
         <div className="space-y-6 mb-20">
-          <h3 className="font-mono text-xs uppercase tracking-[0.3em] text-[#6978a0] mb-8 font-bold text-center sm:text-left">
-            // Our Commitment
-          </h3>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+            <h3 className="font-mono text-xs uppercase tracking-[0.3em] text-[#6978a0] font-bold">
+              // Our Commitment: Mental Health Resilience Youth Charitable Cause
+            </h3>
+            <span className="font-mono text-[10px] text-[#FF3B30] uppercase tracking-wider bg-[#FF3B30]/10 border border-[#FF3B30]/20 px-2.5 py-1">
+              10% ALLOCATED ON-CHAIN
+            </span>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            {/* Card 1: Children's Homes */}
+            {/* Card 1: Mental Health Resilience & Crisis Support */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="border-2 border-[#454545] bg-[#0A0A0B] p-6 md:p-8 space-y-4 hover:border-[#FF3B30] transition-colors group"
+              className="border-2 border-[#454545] bg-[#0A0A0B] p-6 md:p-8 space-y-4 hover:border-[#FF3B30] transition-colors group relative"
             >
               <div className="flex justify-between items-center">
-                <span className="font-mono text-2xl" role="img" aria-label="books">📚</span>
-                <BookOpen className="w-5 h-5 text-[#6978a0]/40 group-hover:text-[#FF3B30] transition-colors" />
+                <span className="font-mono text-2xl" role="img" aria-label="brain">🧠</span>
+                <Brain className="w-5 h-5 text-[#6978a0]/40 group-hover:text-[#FF3B30] transition-colors" />
               </div>
               <h4 className="text-display text-lg text-white font-bold uppercase tracking-tight">
-                Children's Homes & Orphanages
+                Mental Health Resilience & Crisis Support
               </h4>
-              <ul className="font-mono text-xs text-[#6978a0] space-y-2 list-none pl-0">
-                <li className="flex items-center gap-2">
-                  <span className="text-[#FF3B30]">&gt;</span> Food and nutrition
+              <ul className="font-mono text-xs text-[#6978a0] space-y-2.5 list-none pl-0">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#FF3B30] shrink-0 font-bold">&gt;</span>
+                  <span>24/7 youth mental health counseling & crisis intervention hotlines</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-[#FF3B30]">&gt;</span> School fees and educational materials
+                <li className="flex items-start gap-2">
+                  <span className="text-[#FF3B30] shrink-0 font-bold">&gt;</span>
+                  <span>Trauma recovery & psychological resilience development</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-[#FF3B30]">&gt;</span> Clothing and healthcare
+                <li className="flex items-start gap-2">
+                  <span className="text-[#FF3B30] shrink-0 font-bold">&gt;</span>
+                  <span>Destigmatizing financial distress, trading anxiety & depression</span>
                 </li>
               </ul>
             </motion.div>
 
-            {/* Card 2: Education & Youth Empowerment */}
+            {/* Card 2: Youth Emotional Wellness & Resilience Courses */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="border-2 border-[#454545] bg-[#0A0A0B] p-6 md:p-8 space-y-4 hover:border-[#FF3B30] transition-colors group"
+              className="border-2 border-[#454545] bg-[#0A0A0B] p-6 md:p-8 space-y-4 hover:border-[#00E676] transition-colors group relative"
             >
               <div className="flex justify-between items-center">
-                <span className="font-mono text-2xl" role="img" aria-label="cap">🎓</span>
-                <GraduationCap className="w-6 h-6 text-[#6978a0]/40 group-hover:text-[#FF3B30] transition-colors" />
+                <span className="font-mono text-2xl" role="img" aria-label="graduation">🎓</span>
+                <GraduationCap className="w-6 h-6 text-[#6978a0]/40 group-hover:text-[#00E676] transition-colors" />
               </div>
               <h4 className="text-display text-lg text-white font-bold uppercase tracking-tight">
-                Education & Youth Empowerment
+                Youth Resilience Courses & Education
               </h4>
-              <ul className="font-mono text-xs text-[#6978a0] space-y-2 list-none pl-0">
-                <li className="flex items-center gap-2">
-                  <span className="text-[#FF3B30]">&gt;</span> Scholarships
+              <ul className="font-mono text-xs text-[#6978a0] space-y-2.5 list-none pl-0">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#00E676] shrink-0 font-bold">&gt;</span>
+                  <span>Mindfulness, stress management & emotional coping workshops</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-[#FF3B30]">&gt;</span> Vocational training
+                <li className="flex items-start gap-2">
+                  <span className="text-[#00E676] shrink-0 font-bold">&gt;</span>
+                  <span>Digital learning courses on emotional intelligence & mental fortitude</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-[#FF3B30]">&gt;</span> Digital skills and entrepreneurship
+                <li className="flex items-start gap-2">
+                  <span className="text-[#00E676] shrink-0 font-bold">&gt;</span>
+                  <span>School, campus & community-based youth wellness programs</span>
                 </li>
               </ul>
             </motion.div>
 
-            {/* Card 3: Small Business Support */}
+            {/* Card 3: Community Peer Support & Outreach */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="border-2 border-[#454545] bg-[#0A0A0B] p-6 md:p-8 space-y-4 hover:border-[#FF3B30] transition-colors group"
+              className="border-2 border-[#454545] bg-[#0A0A0B] p-6 md:p-8 space-y-4 hover:border-[#38BDF8] transition-colors group relative"
             >
               <div className="flex justify-between items-center">
-                <span className="font-mono text-2xl" role="img" aria-label="egg">🐣</span>
-                <Store className="w-5 h-5 text-[#6978a0]/40 group-hover:text-[#FF3B30] transition-colors" />
+                <span className="font-mono text-2xl" role="img" aria-label="hands">🤝</span>
+                <HeartHandshake className="w-5 h-5 text-[#6978a0]/40 group-hover:text-[#38BDF8] transition-colors" />
               </div>
               <h4 className="text-display text-lg text-white font-bold uppercase tracking-tight">
-                Small Business Support
+                Peer Support & Community Care
               </h4>
-              <ul className="font-mono text-xs text-[#6978a0] space-y-2 list-none pl-0">
-                <li className="flex items-center gap-2">
-                  <span className="text-[#FF3B30]">&gt;</span> Helping aspiring entrepreneurs
+              <ul className="font-mono text-xs text-[#6978a0] space-y-2.5 list-none pl-0">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#38BDF8] shrink-0 font-bold">&gt;</span>
+                  <span>Safe spaces & peer-led recovery circles for struggling youth</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-[#FF3B30]">&gt;</span> Sustainable startups & business setups
+                <li className="flex items-start gap-2">
+                  <span className="text-[#38BDF8] shrink-0 font-bold">&gt;</span>
+                  <span>Direct grants & sponsorship for frontline mental health non-profits</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-[#FF3B30]">&gt;</span> Providing opportunities for independence
+                <li className="flex items-start gap-2">
+                  <span className="text-[#38BDF8] shrink-0 font-bold">&gt;</span>
+                  <span>Youth mentorship, life coaching & long-term emotional wellbeing</span>
                 </li>
               </ul>
             </motion.div>
@@ -181,24 +195,24 @@ export default function Charity() {
               Full Documented Ledger
             </h4>
             <p className="font-mono text-xs md:text-sm text-[#6978a0] leading-relaxed">
-              Every donation will be publicly documented. The REGRET community will always know:
+              Every mental health grant and charitable disbursement will be publicly documented. The REGRET community will always know:
             </p>
             <ul className="font-mono text-xs text-[#E2E2E2] space-y-2 list-none pl-0">
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 bg-[#FF3B30] rounded-full" />
-                Where funds were donated.
+                Where mental health funds were deployed.
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 bg-[#FF3B30] rounded-full" />
-                How much was donated.
+                How much was donated in Solana / USD equivalent.
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 bg-[#FF3B30] rounded-full" />
-                The impact those donations made.
+                The direct impact and youth lives supported.
               </li>
             </ul>
             <p className="font-mono text-[10px] text-red-500 font-semibold tracking-wider uppercase pt-2 select-none">
-              No hidden promises. Full transparency.
+              No hidden promises. Full on-chain transparency.
             </p>
           </div>
 
@@ -208,7 +222,7 @@ export default function Charity() {
               Our Promise
             </h5>
             <p className="font-mono text-xs text-[#E2E2E2] italic leading-relaxed max-w-sm mx-auto">
-              "Every regret becomes someone else's opportunity."
+              "Every regret becomes someone else's emotional strength and resilience."
             </p>
           </div>
         </div>

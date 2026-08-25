@@ -4,7 +4,7 @@
  */
 
 import { motion } from "motion/react";
-import { ArrowUp, Twitter, Send, Globe, Music, Instagram } from "lucide-react";
+import { ArrowUp, Twitter, Send, Globe, Music, Instagram, AlertTriangle, ShieldAlert } from "lucide-react";
 
 export default function Footer() {
   const handleScrollTop = () => {
@@ -135,6 +135,25 @@ export default function Footer() {
               </div>
             </div>
 
+          </div>
+
+          {/* Crypto Risk & Legal Disclaimer */}
+          <div className="border border-[#454545]/60 bg-[#0F0F10] p-5 md:p-6 space-y-3 relative overflow-hidden">
+            <div className="flex items-center gap-2 text-[#FF3B30] font-mono text-xs font-bold uppercase tracking-widest border-b border-[#454545]/40 pb-2">
+              <AlertTriangle className="w-4 h-4 shrink-0 text-[#FF3B30]" />
+              <span>CRYPTOCURRENCY & RISK DISCLAIMER</span>
+            </div>
+            <div className="font-mono text-[11px] text-[#6978a0] leading-relaxed space-y-2">
+              <p>
+                <strong className="text-[#E2E2E2]">NOT FINANCIAL ADVICE:</strong> The content, communications, and materials provided on this website, social channels, and related platforms are for community entertainment, cultural expression, artistic, and educational purposes only. Nothing on this website constitutes financial, investment, legal, accounting, or tax advice.
+              </p>
+              <p>
+                <strong className="text-[#E2E2E2]">HIGH VOLATILITY & CAPITAL LOSS RISK:</strong> Cryptocurrency tokens and digital collectibles (including $REGRET and REGRET NFTs) involve extreme market risk, rapid price fluctuations, and the potential for total loss of capital. Meme coins and experimental tokens are highly speculative. Never trade, purchase, or allocate funds that you cannot afford to lose completely.
+              </p>
+              <p>
+                <strong className="text-[#E2E2E2]">NO EXPECTATION OF PROFIT:</strong> $REGRET is a decentralized meme token and community initiative. Holding $REGRET does not represent shares, securities, equity, profit-sharing, or ownership rights in any entity. Always conduct your own independent research (DYOR) and consult licensed financial professionals before interacting with decentralized protocols.
+              </p>
+            </div>
           </div>
 
           {/* Copyright Row & Back to Top */}
