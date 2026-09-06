@@ -66,7 +66,7 @@ export default function Tokenomics() {
 
   const allocations: TokenAllocation[] = [
     {
-      value: 30,
+      value: 45,
       label: "Community & Ecosystem",
       subLabel: "Ecosystem development, community growth & incentives",
       color: "#F2A900", // Gold
@@ -82,17 +82,17 @@ export default function Tokenomics() {
       icon: Droplets,
     },
     {
-      value: 15,
+      value: 10,
       label: "Project Development & Operations",
-      subLabel: "Core infrastructure, operations & protocol enhancement",
+      subLabel: "5% core infrastructure development, 5% operations & protocol scaling",
       color: "#9333EA", // Purple/Violet
       glowColor: "rgba(147, 51, 234, 0.4)",
       icon: Wrench,
     },
     {
-      value: 10,
+      value: 5,
       label: "Charity Treasury",
-      subLabel: "Dedicated to mental health support & regret-relief initiatives",
+      subLabel: "Dedicated to youth mental health resilience & support initiatives",
       color: "#FF3B30", // Red
       glowColor: "rgba(255, 59, 48, 0.4)",
       icon: Heart,
@@ -106,7 +106,7 @@ export default function Tokenomics() {
       icon: Megaphone,
     },
     {
-      value: 10,
+      value: 5,
       label: "NFT Holder Airdrops & Rewards",
       subLabel: "Direct rewards, exclusive perks, and airdrops to NFT holders",
       color: "#F472B6", // Pink
@@ -116,7 +116,7 @@ export default function Tokenomics() {
     {
       value: 5,
       label: "Team",
-      subLabel: "30% released at launch, with the remaining released every 2 months for 1 year on Streamflow",
+      subLabel: "100% locked for 2 months, followed by linear vesting on Streamflow",
       color: "#94A3B8", // Slate Gray
       glowColor: "rgba(148, 163, 184, 0.4)",
       icon: Lock,

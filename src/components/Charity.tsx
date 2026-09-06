@@ -70,7 +70,7 @@ export default function Charity() {
             className="lg:col-span-6 bg-[#0F0F10] border-2 border-[#454545] p-6 md:p-8 font-mono text-xs md:text-sm text-[#6978a0] leading-relaxed relative overflow-hidden"
           >
             <p>
-              At REGRET, we recognize that emotional volatility, burnout, and mental anguish are real battles. That's why a dedicated 10% Charity Treasury and creator rewards are channeled directly toward youth mental health resilience programs, counseling initiatives, and charitable wellness courses.
+              At REGRET, we recognize that emotional volatility, burnout, and mental anguish are real battles. That's why a dedicated 5% Charity Treasury and creator rewards are channeled directly toward youth mental health resilience programs, counseling initiatives, and charitable wellness courses.
             </p>
           </motion.div>
 
@@ -83,7 +83,7 @@ export default function Charity() {
               // Our Commitment: Mental Health Resilience Youth Charitable Cause
             </h3>
             <span className="font-mono text-[10px] text-[#FF3B30] uppercase tracking-wider bg-[#FF3B30]/10 border border-[#FF3B30]/20 px-2.5 py-1">
-              10% ALLOCATED ON-CHAIN
+              5% ALLOCATED ON-CHAIN
             </span>
           </div>
 
