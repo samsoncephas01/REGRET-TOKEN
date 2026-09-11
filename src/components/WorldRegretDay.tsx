@@ -82,11 +82,12 @@ export default function WorldRegretDay() {
               <span className="text-[#FF3B30]">REGRET</span> DAY
             </h2>
             <div className="flex flex-wrap items-center gap-3 pt-1">
-              <span className="font-mono text-xs font-bold text-[#00E676] bg-[#00E676]/10 border border-[#00E676]/30 px-2.5 py-1 tracking-widest uppercase">
-                // SEPT 10, 2026
+              <span className="font-mono text-xs font-bold text-[#FF3B30] bg-[#FF3B30]/10 border border-[#FF3B30]/30 px-2.5 py-1 tracking-widest uppercase flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#FF3B30] animate-ping" />
+                LIVE on 10/09/26, 2pm utc
               </span>
-              <span className="font-mono text-xs text-[#6978a0] tracking-widest uppercase">
-                • THE COUNTDOWN IS LIVE
+              <span className="font-mono text-xs text-[#00E676] tracking-widest uppercase font-bold">
+                • THE GATHERING IS IN SESSION
               </span>
             </div>
           </motion.div>
@@ -163,44 +164,68 @@ export default function WorldRegretDay() {
             <div className="flex items-center justify-between border-b border-[#454545] pb-3 text-[#6978a0] font-mono text-[10px] tracking-widest uppercase">
               <span className="flex items-center gap-1.5 text-[#FF3B30]">
                 <Clock className="w-3.5 h-3.5 text-[#FF3B30] animate-spin-slow" />
-                COUNTDOWN TO SEPT 10
+                {timeLeft.isLive ? "EVENT STATUS" : "COUNTDOWN TO SEPT 10"}
               </span>
-              <span className="text-[#00E676] font-bold flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00E676] animate-ping" />
-                LIVE_UTC
+              <span className="text-[#FF3B30] font-bold flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF3B30] animate-ping" />
+                LIVE ON 10/09/26, 2PM UTC
               </span>
             </div>
 
-            {/* Live Ticking Countdown Digits */}
-            <div className="grid grid-cols-4 gap-2.5 text-center select-none">
-              <div className="space-y-2">
-                <div className="bg-[#0F0F10] border-2 border-[#454545] text-[#E2E2E2] text-display text-2xl md:text-3xl py-3 font-bold tabular-nums">
-                  {formatDigits(timeLeft.days)}
+            {/* Live Ticking Countdown or Active Event State */}
+            {timeLeft.isLive ? (
+              <div className="bg-[#0F0F10] border-2 border-[#FF3B30] p-6 text-center space-y-3 relative overflow-hidden shadow-[0_0_30px_rgba(255,59,48,0.25)]">
+                <div className="flex items-center justify-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#FF3B30] animate-ping" />
+                  <span className="font-mono text-xs font-bold text-[#FF3B30] tracking-widest uppercase">
+                    EVENT NOW ACTIVE
+                  </span>
                 </div>
-                <span className="font-mono text-[9px] text-[#6978a0] uppercase tracking-wider block">DAYS</span>
-              </div>
-              <div className="space-y-2">
-                <div className="bg-[#0F0F10] border-2 border-[#454545] text-[#E2E2E2] text-display text-2xl md:text-3xl py-3 font-bold tabular-nums">
-                  {formatDigits(timeLeft.hours)}
+                <div className="text-display text-2xl md:text-3xl text-white font-extrabold tracking-tight">
+                  LIVE on 10/09/26, 2pm utc
                 </div>
-                <span className="font-mono text-[9px] text-[#6978a0] uppercase tracking-wider block">HOURS</span>
+                <p className="font-mono text-[11px] text-[#E2E2E2]/70 leading-relaxed">
+                  The countdown has concluded. World Regret Day is officially LIVE.
+                </p>
               </div>
-              <div className="space-y-2">
-                <div className="bg-[#0F0F10] border-2 border-[#454545] text-[#E2E2E2] text-display text-2xl md:text-3xl py-3 font-bold tabular-nums">
-                  {formatDigits(timeLeft.minutes)}
+            ) : (
+              <div className="grid grid-cols-4 gap-2.5 text-center select-none">
+                <div className="space-y-2">
+                  <div className="bg-[#0F0F10] border-2 border-[#454545] text-[#E2E2E2] text-display text-2xl md:text-3xl py-3 font-bold tabular-nums">
+                    {formatDigits(timeLeft.days)}
+                  </div>
+                  <span className="font-mono text-[9px] text-[#6978a0] uppercase tracking-wider block">DAYS</span>
                 </div>
-                <span className="font-mono text-[9px] text-[#6978a0] uppercase tracking-wider block">MINS</span>
-              </div>
-              <div className="space-y-2">
-                <div className="bg-[#0F0F10] border-2 border-[#FF3B30] text-[#FF3B30] text-display text-2xl md:text-3xl py-3 font-bold tabular-nums animate-pulse">
-                  {formatDigits(timeLeft.seconds)}
+                <div className="space-y-2">
+                  <div className="bg-[#0F0F10] border-2 border-[#454545] text-[#E2E2E2] text-display text-2xl md:text-3xl py-3 font-bold tabular-nums">
+                    {formatDigits(timeLeft.hours)}
+                  </div>
+                  <span className="font-mono text-[9px] text-[#6978a0] uppercase tracking-wider block">HOURS</span>
                 </div>
-                <span className="font-mono text-[9px] text-[#FF3B30] uppercase tracking-wider block font-bold">SECS</span>
+                <div className="space-y-2">
+                  <div className="bg-[#0F0F10] border-2 border-[#454545] text-[#E2E2E2] text-display text-2xl md:text-3xl py-3 font-bold tabular-nums">
+                    {formatDigits(timeLeft.minutes)}
+                  </div>
+                  <span className="font-mono text-[9px] text-[#6978a0] uppercase tracking-wider block">MINS</span>
+                </div>
+                <div className="space-y-2">
+                  <div className="bg-[#0F0F10] border-2 border-[#FF3B30] text-[#FF3B30] text-display text-2xl md:text-3xl py-3 font-bold tabular-nums animate-pulse">
+                    {formatDigits(timeLeft.seconds)}
+                  </div>
+                  <span className="font-mono text-[9px] text-[#FF3B30] uppercase tracking-wider block font-bold">SECS</span>
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Status indicators */}
             <div className="bg-[#0F0F10] border border-[#454545]/40 p-3 font-mono text-[10px] text-[#6978a0] space-y-2">
+              <div className="flex justify-between">
+                <span>STATUS:</span>
+                <span className="text-[#FF3B30] font-bold flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF3B30] animate-ping" />
+                  LIVE on 10/09/26, 2pm utc
+                </span>
+              </div>
               <div className="flex justify-between">
                 <span>DATE:</span>
                 <span className="text-[#00E676] font-bold">SEPTEMBER 10, 2026</span>

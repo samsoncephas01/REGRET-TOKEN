@@ -106,12 +106,12 @@ export default function Footer() {
                   <span>TELEGRAM GROUP</span>
                 </a>
                 <a
-                  href="https://dexscreener.com"
+                  href="https://dexscreener.com/solana/DUMy1Qmn8YPqntnhCkFKqWBiGeGR85qfjZUkzhvoHy8L"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-[#E2E2E2]/60 hover:text-[#FF3B30] transition-colors focus:outline-none w-fit group"
+                  className="flex items-center gap-2 text-[#E2E2E2]/60 hover:text-[#00E676] transition-colors focus:outline-none w-fit group"
                 >
-                  <Globe className="w-4 h-4 text-[#FF3B30]/60 group-hover:text-[#FF3B30]" />
+                  <Globe className="w-4 h-4 text-[#00E676]/60 group-hover:text-[#00E676]" />
                   <span>DEXSCREENER</span>
                 </a>
                 <a
