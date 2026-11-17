@@ -3,53 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Calendar, Bell, Check, Clock, ShieldAlert, Sparkles } from "lucide-react";
+import { Bell, Check, Clock } from "lucide-react";
 
 export default function WorldRegretDay() {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
-
-  // Target Date: September 10, 2026 (14:00:00 UTC / 2:00 PM UTC)
-  const TARGET_DATE = new Date("2026-09-10T14:00:00Z").getTime();
-
-  const calculateTimeLeft = () => {
-    const now = new Date().getTime();
-    const difference = TARGET_DATE - now;
-
-    if (difference <= 0) {
-      return { days: 0, hours: 0, minutes: 0, seconds: 0, isLive: true };
-    }
-
-    return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / (1000 * 60)) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
-      isLive: false,
-    };
-  };
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const formatDigits = (val: number) => {
-    return val < 10 ? `0${val}` : `${val}`;
-  };
+  const emailInputRef = useRef<HTMLInputElement>(null);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) return;
     setSubscribed(true);
     setEmail("");
+  };
+
+  const focusReminderForm = () => {
+    if (emailInputRef.current) {
+      emailInputRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+      setTimeout(() => {
+        emailInputRef.current?.focus();
+      }, 300);
+    }
   };
 
   return (
@@ -74,7 +50,7 @@ export default function WorldRegretDay() {
           >
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#FF3B30] font-bold flex items-center gap-2">
               <span className="w-2 h-2 bg-[#FF3B30] rounded-full animate-ping" />
-              OFFICIAL DATE LOCKED • SEPT 10, 2026
+              RELAUNCH SCHEDULE • DATE & TIME TBA
             </span>
             <h2 className="text-display text-4xl md:text-6xl lg:text-7xl leading-[0.9] text-[#E2E2E2] tracking-tighter">
               WORLD
@@ -83,11 +59,11 @@ export default function WorldRegretDay() {
             </h2>
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <span className="font-mono text-xs font-bold text-[#FF3B30] bg-[#FF3B30]/10 border border-[#FF3B30]/30 px-2.5 py-1 tracking-widest uppercase flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-[#FF3B30] animate-ping" />
-                LIVE on 10/09/26, 2pm utc
+                <Clock className="w-3.5 h-3.5 text-[#FF3B30]" />
+                RELAUNCH DAY: TBA
               </span>
-              <span className="font-mono text-xs text-[#00E676] tracking-widest uppercase font-bold">
-                • THE GATHERING IS IN SESSION
+              <span className="font-mono text-xs text-[#6978a0] tracking-widest uppercase font-bold">
+                • AWAITING NEW COORDINATES
               </span>
             </div>
           </motion.div>
@@ -99,7 +75,7 @@ export default function WorldRegretDay() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-mono text-sm md:text-base text-[#E2E2E2]/80 leading-relaxed max-w-xl"
           >
-            A designated international crypto-holiday on <strong className="text-white">September 10, 2026</strong> to collectively mourn every early sell, faded 1000x launch, compromised private key, and catastrophic margin liquidation. We will stand in solidarity at 2:00 PM UTC (the peak hours of trader regret) to convert our shared losses into mental resilience and collective strength.
+            A designated international crypto-holiday to collectively mourn every early sell, faded 1000x launch, compromised private key, and catastrophic margin liquidation. <strong className="text-white">Relaunch day is TBA</strong> — we will stand in solidarity when the new coordinates are locked to convert our shared losses into mental resilience and collective strength.
           </motion.p>
 
           {/* Interactive Interest Form */}
@@ -114,10 +90,11 @@ export default function WorldRegretDay() {
               {!subscribed ? (
                 <form onSubmit={handleSubscribe} className="space-y-4">
                   <p className="font-mono text-xs text-[#6978a0] uppercase tracking-wider">
-                    Sign up to receive remorse reminders and local community coordinates:
+                    Sign up to receive relaunch day announcements and community coordinates:
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <input
+                      ref={emailInputRef}
                       type="email"
                       required
                       value={email}
@@ -143,8 +120,8 @@ export default function WorldRegretDay() {
                 >
                   <Check className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-bold uppercase tracking-wider mb-1">REMINDER CONFIRMED FOR SEPT 10, 2026</p>
-                    <p className="text-[#6978a0] leading-relaxed">We will dispatch alerts to your inbox as September 10 approaches. Check your spam folder — it is where all true regret belongs.</p>
+                    <p className="font-bold uppercase tracking-wider mb-1">REMINDER CONFIRMED • RELAUNCH DAY TBA</p>
+                    <p className="text-[#6978a0] leading-relaxed">We will dispatch alerts to your inbox as soon as the relaunch day is announced. Check your spam folder — it is where all true regret belongs.</p>
                   </div>
                 </motion.div>
               )}
@@ -152,7 +129,7 @@ export default function WorldRegretDay() {
           </motion.div>
         </div>
 
-        {/* Right Grid: Retro Flip Counter Box */}
+        {/* Right Grid: Relaunch Status Box */}
         <div className="lg:col-span-5 flex justify-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -164,75 +141,44 @@ export default function WorldRegretDay() {
             <div className="flex items-center justify-between border-b border-[#454545] pb-3 text-[#6978a0] font-mono text-[10px] tracking-widest uppercase">
               <span className="flex items-center gap-1.5 text-[#FF3B30]">
                 <Clock className="w-3.5 h-3.5 text-[#FF3B30] animate-spin-slow" />
-                {timeLeft.isLive ? "EVENT STATUS" : "COUNTDOWN TO SEPT 10"}
+                RELAUNCH STATUS
               </span>
-              <span className="text-[#FF3B30] font-bold flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FF3B30] animate-ping" />
-                LIVE ON 10/09/26, 2PM UTC
+              <span className="text-[#FF3B30] font-bold">
+                RELAUNCH DAY: TBA
               </span>
             </div>
 
-            {/* Live Ticking Countdown or Active Event State */}
-            {timeLeft.isLive ? (
-              <div className="bg-[#0F0F10] border-2 border-[#FF3B30] p-6 text-center space-y-3 relative overflow-hidden shadow-[0_0_30px_rgba(255,59,48,0.25)]">
-                <div className="flex items-center justify-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#FF3B30] animate-ping" />
-                  <span className="font-mono text-xs font-bold text-[#FF3B30] tracking-widest uppercase">
-                    EVENT NOW ACTIVE
-                  </span>
-                </div>
-                <div className="text-display text-2xl md:text-3xl text-white font-extrabold tracking-tight">
-                  LIVE on 10/09/26, 2pm utc
-                </div>
-                <p className="font-mono text-[11px] text-[#E2E2E2]/70 leading-relaxed">
-                  The countdown has concluded. World Regret Day is officially LIVE.
-                </p>
+            {/* Relaunch Day TBA Panel */}
+            <div className="bg-[#0F0F10] border-2 border-[#FF3B30] p-6 text-center space-y-3 relative overflow-hidden shadow-[0_0_30px_rgba(255,59,48,0.2)]">
+              <div className="flex items-center justify-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#FF3B30] animate-pulse" />
+                <span className="font-mono text-xs font-bold text-[#FF3B30] tracking-widest uppercase">
+                  SCHEDULE PENDING
+                </span>
               </div>
-            ) : (
-              <div className="grid grid-cols-4 gap-2.5 text-center select-none">
-                <div className="space-y-2">
-                  <div className="bg-[#0F0F10] border-2 border-[#454545] text-[#E2E2E2] text-display text-2xl md:text-3xl py-3 font-bold tabular-nums">
-                    {formatDigits(timeLeft.days)}
-                  </div>
-                  <span className="font-mono text-[9px] text-[#6978a0] uppercase tracking-wider block">DAYS</span>
-                </div>
-                <div className="space-y-2">
-                  <div className="bg-[#0F0F10] border-2 border-[#454545] text-[#E2E2E2] text-display text-2xl md:text-3xl py-3 font-bold tabular-nums">
-                    {formatDigits(timeLeft.hours)}
-                  </div>
-                  <span className="font-mono text-[9px] text-[#6978a0] uppercase tracking-wider block">HOURS</span>
-                </div>
-                <div className="space-y-2">
-                  <div className="bg-[#0F0F10] border-2 border-[#454545] text-[#E2E2E2] text-display text-2xl md:text-3xl py-3 font-bold tabular-nums">
-                    {formatDigits(timeLeft.minutes)}
-                  </div>
-                  <span className="font-mono text-[9px] text-[#6978a0] uppercase tracking-wider block">MINS</span>
-                </div>
-                <div className="space-y-2">
-                  <div className="bg-[#0F0F10] border-2 border-[#FF3B30] text-[#FF3B30] text-display text-2xl md:text-3xl py-3 font-bold tabular-nums animate-pulse">
-                    {formatDigits(timeLeft.seconds)}
-                  </div>
-                  <span className="font-mono text-[9px] text-[#FF3B30] uppercase tracking-wider block font-bold">SECS</span>
-                </div>
+              <div className="text-display text-2xl md:text-3xl text-white font-extrabold tracking-tight uppercase">
+                RELAUNCH DAY: TBA
               </div>
-            )}
+              <p className="font-mono text-[11px] text-[#E2E2E2]/70 leading-relaxed">
+                Official relaunch date and time will be announced soon. Stay tuned for updated coordinates.
+              </p>
+            </div>
 
             {/* Status indicators */}
             <div className="bg-[#0F0F10] border border-[#454545]/40 p-3 font-mono text-[10px] text-[#6978a0] space-y-2">
               <div className="flex justify-between">
                 <span>STATUS:</span>
-                <span className="text-[#FF3B30] font-bold flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF3B30] animate-ping" />
-                  LIVE on 10/09/26, 2pm utc
+                <span className="text-[#FF3B30] font-bold">
+                  PENDING RELAUNCH
                 </span>
               </div>
               <div className="flex justify-between">
-                <span>DATE:</span>
-                <span className="text-[#00E676] font-bold">SEPTEMBER 10, 2026</span>
+                <span>RELAUNCH DAY:</span>
+                <span className="text-[#F2A900] font-bold">TBA</span>
               </div>
               <div className="flex justify-between">
                 <span>TIME:</span>
-                <span className="text-[#FF3B30] font-bold">2:00 PM UTC</span>
+                <span className="text-[#F2A900] font-bold">TBA</span>
               </div>
               <div className="flex justify-between">
                 <span>EVENT NAME:</span>
@@ -249,21 +195,12 @@ export default function WorldRegretDay() {
             </div>
 
             <button
-              onClick={() => {
-                const icsText = "BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:World REGRET Day - Sept 10 2026\nDESCRIPTION:A designated international holiday on September 10, 2026 at 2:00 PM UTC to collectively mourn missed trades and validate our emotional damage together.\nDTSTART:20260910T140000Z\nDTEND:20260910T180000Z\nLOCATION:Global Virtual & Community Coordinates\nEND:VEVENT\nEND:VCALENDAR";
-                const blob = new Blob([icsText], { type: "text/calendar" });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement("a");
-                a.href = url;
-                a.download = "WorldRegretDay_Sept10_2026.ics";
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-              }}
+              type="button"
+              onClick={focusReminderForm}
               className="w-full py-3 bg-[#0F0F10] border-2 border-[#454545] hover:border-[#FF3B30] hover:text-white text-xs font-mono font-bold tracking-widest text-[#E2E2E2]/70 uppercase transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
-              <Calendar className="w-4 h-4 text-[#FF3B30]" />
-              ADD TO SYSTEM CALENDAR (.ICS)
+              <Bell className="w-4 h-4 text-[#FF3B30]" />
+              NOTIFY ME WHEN TBA IS LOCKED
             </button>
           </motion.div>
         </div>

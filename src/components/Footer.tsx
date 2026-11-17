@@ -4,7 +4,7 @@
  */
 
 import { motion } from "motion/react";
-import { ArrowUp, Twitter, Send, Globe, Music, Instagram, AlertTriangle, ShieldAlert } from "lucide-react";
+import { ArrowUp, Twitter, Send, Music, Instagram, AlertTriangle } from "lucide-react";
 
 export default function Footer() {
   const handleScrollTop = () => {
@@ -104,15 +104,6 @@ export default function Footer() {
                 >
                   <Send className="w-4 h-4 text-[#FF3B30]/60 group-hover:text-[#FF3B30]" />
                   <span>TELEGRAM GROUP</span>
-                </a>
-                <a
-                  href="https://dexscreener.com/solana/DUMy1Qmn8YPqntnhCkFKqWBiGeGR85qfjZUkzhvoHy8L"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-[#E2E2E2]/60 hover:text-[#00E676] transition-colors focus:outline-none w-fit group"
-                >
-                  <Globe className="w-4 h-4 text-[#00E676]/60 group-hover:text-[#00E676]" />
-                  <span>DEXSCREENER</span>
                 </a>
                 <a
                   href="https://www.tiktok.com/@regret_token1?_r=1&_t=ZS-97hIA5ZszFU"

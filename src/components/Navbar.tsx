@@ -5,7 +5,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, ShieldAlert, ExternalLink } from "lucide-react";
+import { Menu, X, ShieldAlert } from "lucide-react";
 import logoImg from "../assets/images/logo_header_1782936219270.jpg";
 
 export default function Navbar() {
@@ -117,16 +117,6 @@ export default function Navbar() {
           >
             CONFESSION WALL
           </button>
-          <a
-            id="nav-btn-dexscreener"
-            href="https://dexscreener.com/solana/DUMy1Qmn8YPqntnhCkFKqWBiGeGR85qfjZUkzhvoHy8L"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono text-xs tracking-[0.15em] text-[#00E676] hover:text-white bg-[#00E676]/10 hover:bg-[#00E676]/20 border border-[#00E676]/40 px-3 py-1.5 transition-all flex items-center gap-1.5 font-bold cursor-pointer"
-          >
-            <span>DEXSCREENER</span>
-            <ExternalLink className="w-3 h-3" />
-          </a>
         </div>
 
         {/* Mobile Hamburger Control */}
@@ -201,16 +191,6 @@ export default function Navbar() {
               >
                 // CONFESSION WALL
               </button>
-              <a
-                id="mob-nav-dexscreener"
-                href="https://dexscreener.com/solana/DUMy1Qmn8YPqntnhCkFKqWBiGeGR85qfjZUkzhvoHy8L"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-left text-sm tracking-widest text-[#00E676] hover:text-white transition-colors py-2 font-bold flex items-center justify-between border-t border-b border-[#454545]/40"
-              >
-                <span>// DEXSCREENER LIVE CHART</span>
-                <ExternalLink className="w-3.5 h-3.5 text-[#00E676]" />
-              </a>
               
               <div className="flex items-center gap-2 text-[10px] text-[#454545] justify-center mt-2">
                 <ShieldAlert className="w-3 h-3" />

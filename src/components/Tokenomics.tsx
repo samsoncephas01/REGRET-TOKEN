@@ -5,7 +5,7 @@
 
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { Coins, Flame, ShieldCheck, Heart, Users, Landmark, HeartCrack, Droplets, Wrench, Megaphone, Gift, Lock, ExternalLink } from "lucide-react";
+import { Coins, Flame, ShieldCheck, Heart, Users, Landmark, HeartCrack, Droplets, Wrench, Megaphone, Gift, Lock } from "lucide-react";
 
 interface TokenAllocation {
   value: number;
@@ -149,45 +149,25 @@ export default function Tokenomics() {
       <div className="px-6 md:px-16 lg:px-24 max-w-7xl mx-auto relative z-10 py-24 md:py-32">
         
         {/* Title Block */}
-        <div className="mb-16 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-display text-4xl md:text-5xl text-[#E2E2E2] mb-3 tracking-tighter uppercase font-extrabold"
-            >
-              4. TOKENOMICS
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 0.4 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-mono text-xs text-[#6978a0] uppercase tracking-[0.3em]"
-            >
-              // Controlled allocation of momentum
-            </motion.p>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
+        <div className="mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
+            className="text-display text-4xl md:text-5xl text-[#E2E2E2] mb-3 tracking-tighter uppercase font-extrabold"
           >
-            <a
-              href="https://dexscreener.com/solana/DUMy1Qmn8YPqntnhCkFKqWBiGeGR85qfjZUkzhvoHy8L"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#00E676]/10 hover:bg-[#00E676]/20 border border-[#00E676]/40 text-[#00E676] hover:text-white px-4 py-2.5 font-mono text-xs font-bold tracking-wider uppercase transition-all duration-200"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#00E676] animate-ping" />
-              <span>DEXSCREENER PAIR</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          </motion.div>
+            4. TOKENOMICS
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 0.4 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="font-mono text-xs text-[#6978a0] uppercase tracking-[0.3em]"
+          >
+            // Controlled allocation of momentum
+          </motion.p>
         </div>
 
         {/* 2-Column Chart/Breakdown Block */}

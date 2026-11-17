@@ -5,7 +5,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { ArrowRight, Flame, ExternalLink } from "lucide-react";
+import { ArrowRight, Flame, Clock } from "lucide-react";
 
 export default function Hero() {
   const bulletLines = [
@@ -116,14 +116,20 @@ export default function Hero() {
               </p>
               <div className="pt-3">
                 <a
-                  href="https://dexscreener.com/solana/DUMy1Qmn8YPqntnhCkFKqWBiGeGR85qfjZUkzhvoHy8L"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-[#00E676]/10 hover:bg-[#00E676]/20 border border-[#00E676]/40 text-[#00E676] hover:text-white px-3.5 py-2 font-mono text-xs font-bold tracking-wider uppercase transition-all duration-200"
+                  href="#world-regret-day"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById("world-regret-day");
+                    if (el) {
+                      const offset = 80;
+                      const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+                      window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
+                    }
+                  }}
+                  className="inline-flex items-center gap-2 bg-[#FF3B30]/10 hover:bg-[#FF3B30]/20 border border-[#FF3B30]/40 text-[#FF3B30] hover:text-white px-3.5 py-2 font-mono text-xs font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer"
                 >
-                  <span className="w-2 h-2 rounded-full bg-[#00E676] animate-ping" />
-                  <span>DEXSCREENER CHART</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <Clock className="w-3.5 h-3.5" />
+                  <span>RELAUNCH DAY: TBA</span>
                 </a>
               </div>
             </motion.div>
