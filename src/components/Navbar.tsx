@@ -76,20 +76,6 @@ export default function Navbar() {
             NARRATIVE
           </button>
           <button
-            id="nav-btn-tokenomics"
-            onClick={() => scrollToSection("tokenomics")}
-            className="font-mono text-xs tracking-[0.2em] text-[#E2E2E2]/60 hover:text-[#E2E2E2] transition-colors focus:outline-none cursor-pointer"
-          >
-            TOKENOMICS
-          </button>
-          <button
-            id="nav-btn-charity"
-            onClick={() => scrollToSection("charity")}
-            className="font-mono text-xs tracking-[0.2em] text-[#E2E2E2]/60 hover:text-[#E2E2E2] transition-colors focus:outline-none cursor-pointer"
-          >
-            CHARITY
-          </button>
-          <button
             id="nav-btn-regretday"
             onClick={() => scrollToSection("world-regret-day")}
             className="font-mono text-xs tracking-[0.2em] text-[#E2E2E2]/60 hover:text-[#E2E2E2] transition-colors focus:outline-none cursor-pointer"
@@ -115,7 +101,7 @@ export default function Navbar() {
             onClick={() => scrollToSection("terminal")}
             className="font-mono text-xs tracking-[0.2em] text-[#FF3B30] hover:text-[#E2E2E2] font-semibold transition-colors focus:outline-none cursor-pointer"
           >
-            CONFESSION WALL
+            STORY WALL
           </button>
         </div>
 
@@ -150,20 +136,6 @@ export default function Navbar() {
                 // NARRATIVE
               </button>
               <button
-                id="mob-nav-tokenomics"
-                onClick={() => scrollToSection("tokenomics")}
-                className="text-left text-sm tracking-widest text-[#E2E2E2]/70 hover:text-[#FF3B30] transition-colors py-1"
-              >
-                // TOKENOMICS
-              </button>
-              <button
-                id="mob-nav-charity"
-                onClick={() => scrollToSection("charity")}
-                className="text-left text-sm tracking-widest text-[#E2E2E2]/70 hover:text-[#FF3B30] transition-colors py-1"
-              >
-                // CHARITY
-              </button>
-              <button
                 id="mob-nav-regretday"
                 onClick={() => scrollToSection("world-regret-day")}
                 className="text-left text-sm tracking-widest text-[#E2E2E2]/70 hover:text-[#FF3B30] transition-colors py-1"
@@ -189,7 +161,7 @@ export default function Navbar() {
                 onClick={() => scrollToSection("terminal")}
                 className="text-left text-sm tracking-widest text-[#FF3B30] hover:text-white transition-colors py-1 font-bold"
               >
-                // CONFESSION WALL
+                // STORY WALL
               </button>
               
               <div className="flex items-center gap-2 text-[10px] text-[#454545] justify-center mt-2">

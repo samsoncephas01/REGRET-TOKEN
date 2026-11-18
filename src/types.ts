@@ -3,19 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export interface Confession {
+export interface Story {
   id: string;
+  author: string;
   text: string;
-  timestamp: string;
-  amountSol: number;
-  regretReceived: number;
-  hash: string;
-}
-
-export interface WalletState {
-  connected: boolean;
-  address: string | null;
-  balanceSol: number;
+  createdAt: Date | null;
 }
 
 export interface TickerMessage {

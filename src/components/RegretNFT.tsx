@@ -5,7 +5,7 @@
 
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { Sparkles, HelpCircle, AlertCircle, Eye, RefreshCw, Layers } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import regretCharacterImg from "../assets/images/regret_nft_character_1785963436470.jpg";
 
 export default function RegretNFT() {
@@ -24,51 +24,6 @@ export default function RegretNFT() {
     "Badge of Conviction",
     "Lifetime membership",
     "Every Scar Tells a Story"
-  ];
-
-  const emotionalRarities = [
-    {
-      emoji: "🟢",
-      label: "FOMO Survivor",
-      color: "#00E676",
-      description: "Minted during absolute peak velocity, survived the inevitable 90% correction."
-    },
-    {
-      emoji: "🔴",
-      label: "Paper Hands",
-      color: "#FF3B30",
-      description: "Sold at the exact bottom, right before a 100x candle. An absolute classic."
-    },
-    {
-      emoji: "🟣",
-      label: "Diamond Hands",
-      color: "#9333EA",
-      description: "Held from peak to absolute zero. Never sold, never surrendered, never profited."
-    },
-    {
-      emoji: "🟡",
-      label: "Exit Liquidity",
-      color: "#F2A900",
-      description: "The ultimate counter-party. Gracefully bought bags from developers' wallets at 3 AM."
-    },
-    {
-      emoji: "⚫",
-      label: "Rug Survivor",
-      color: "#4B5563",
-      description: "Experienced the pure rush of dynamic smart contract rugpulls and lived to tell the story."
-    },
-    {
-      emoji: "🔥",
-      label: "Top Buyer",
-      color: "#F97316",
-      description: "Bought the absolute local ATH peak candle down to the exact Satoshi."
-    },
-    {
-      emoji: "👻",
-      label: "Ghost Wallet",
-      color: "#38BDF8",
-      description: "Forgotten private keys, compromised seed phrases, or pure silent watch-only watchlists."
-    }
   ];
 
   return (
@@ -90,7 +45,7 @@ export default function RegretNFT() {
             transition={{ duration: 0.6 }}
             className="text-display text-4xl md:text-5xl text-[#E2E2E2] mb-3 tracking-tighter uppercase font-extrabold"
           >
-            5. REGRET NFT COLLECTION
+            REGRET NFT COLLECTION
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -224,64 +179,6 @@ export default function RegretNFT() {
 
           </div>
 
-        </div>
-
-        {/* Emotional Rarity Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-16 pt-16 border-t border-[#1E1E20]"
-        >
-          <div className="mb-10">
-            <span className="font-mono text-xs text-[#FF3B30] tracking-widest uppercase block mb-2 font-black">
-              // EMOTIONAL METRICS
-            </span>
-            <h3 className="text-display text-2xl md:text-3xl text-[#E2E2E2] font-extrabold uppercase tracking-tight">
-              RARITY TIED TO EMOTIONS
-            </h3>
-            <p className="font-mono text-xs text-[#6978a0] leading-relaxed max-w-2xl mt-2">
-              Every item in the collection is dynamically minted with a unique rarity class corresponding to the psychological states of the modern degenerate trader.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {emotionalRarities.map((item, idx) => (
-              <div
-                key={idx}
-                className="border-2 border-[#454545] bg-[#0F0F10] p-5 relative overflow-hidden group hover:border-[#FF3B30]/50 transition-all duration-300"
-              >
-                {/* Micro corner highlight */}
-                <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-transparent group-hover:border-[#FF3B30] transition-colors" />
-                
-                <div className="flex items-start gap-4">
-                  <div className="text-2xl select-none filter drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] py-1">
-                    {item.emoji}
-                  </div>
-                  <div className="space-y-1">
-                    <h4 className="font-mono text-xs text-white font-extrabold tracking-wider uppercase flex items-center gap-1.5">
-                      {item.label}
-                      <span className="text-[8px] px-1 py-0.2 border border-[#454545] text-[#6978a0] group-hover:text-white group-hover:border-[#FF3B30]/30 transition-colors">
-                        CLASS-{idx + 1}
-                      </span>
-                    </h4>
-                    <p className="font-mono text-[11px] text-[#6978a0] leading-normal group-hover:text-[#E2E2E2]/80 transition-colors duration-300">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Global Warning Footer Accent */}
-        <div className="mt-12 border-2 border-dashed border-[#FF3B30]/30 bg-[#FF3B30]/5 p-4 flex items-center gap-4">
-          <HelpCircle className="w-5 h-5 text-[#FF3B30] shrink-0" />
-          <p className="font-mono text-xs text-[#E2E2E2]/80 leading-relaxed">
-            <span className="text-[#FF3B30] font-extrabold">DISCLAIMER:</span> Project REGRET NFTs are currently under conceptual evaluation. No contracts are deployed. Any announcement claiming an active mint is a malicious fraud. Live safely, trade carefully, protect your wallets.
-          </p>
         </div>
 
       </div>

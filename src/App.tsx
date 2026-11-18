@@ -9,13 +9,12 @@ import Hero from "./components/Hero";
 import Narrative from "./components/Narrative";
 import Motto from "./components/Motto";
 import Ticker from "./components/Ticker";
-import Tokenomics from "./components/Tokenomics";
 import Roadmap from "./components/Roadmap";
-import Charity from "./components/Charity";
 import WorldRegretDay from "./components/WorldRegretDay";
 import RegretNFT from "./components/RegretNFT";
 import Terminal from "./components/Terminal";
 import Footer from "./components/Footer";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 export default function App() {
   return (
@@ -30,12 +29,12 @@ export default function App() {
         <Narrative />
         <Motto />
         <Ticker />
-        <Tokenomics />
-        <Charity />
         <WorldRegretDay />
         <RegretNFT />
         <Roadmap />
-        <Terminal />
+        <ErrorBoundary>
+          <Terminal />
+        </ErrorBoundary>
       </main>
 
       {/* Global Footer */}

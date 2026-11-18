@@ -1,0 +1,45 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global default-deny safety net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Global primitives
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    // Story entity validation blueprint
+    function isValidStory(data) {
+      return data.keys().hasAll(['author', 'text', 'createdAt']) &&
+        data.keys().hasOnly(['author', 'text', 'createdAt']) &&
+        data.author is string &&
+        data.author.size() >= 1 &&
+        data.author.size() <= 40 &&
+        data.text is string &&
+        data.text.size() >= 3 &&
+        data.text.size() <= 500 &&
+        data.createdAt is timestamp &&
+        data.createdAt == request.time;
+    }
+
+    match /stories/{storyId} {
+      // Public story wall: anyone can read individual stories or list bounded pages of the public wall
+      allow get: if isValidId(storyId);
+      allow list: if request.query.limit != null && request.query.limit <= 100;
+
+      // Anyone can submit a new valid story (no signup/wallet required)
+      allow create: if isValidId(storyId) && isValidStory(incoming());
+
+      // Stories are immutable once posted
+      allow update, delete: if false;
+    }
+  }
+}
