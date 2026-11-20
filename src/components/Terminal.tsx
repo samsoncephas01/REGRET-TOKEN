@@ -126,7 +126,7 @@ export default function Terminal() {
   };
 
   return (
-    <section id="terminal" className="relative bg-[#0A0A0B] px-6 md:px-16 lg:px-24 py-28 md:py-36">
+    <section id="terminal" className="relative bg-[#0A0A0B] px-6 md:px-16 lg:px-24 pt-32 md:pt-36 pb-24 md:pb-32">
       <div className="max-w-3xl mx-auto space-y-12">
 
         {/* Simple Story Submission Form */}

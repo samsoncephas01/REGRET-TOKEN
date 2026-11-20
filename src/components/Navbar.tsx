@@ -69,34 +69,6 @@ export default function Navbar() {
         {/* Desktop Menu Navigation */}
         <div className="hidden md:flex items-center gap-10">
           <button
-            id="nav-btn-narrative"
-            onClick={() => scrollToSection("narrative")}
-            className="font-mono text-xs tracking-[0.2em] text-[#E2E2E2]/60 hover:text-[#E2E2E2] transition-colors focus:outline-none cursor-pointer"
-          >
-            NARRATIVE
-          </button>
-          <button
-            id="nav-btn-regretday"
-            onClick={() => scrollToSection("world-regret-day")}
-            className="font-mono text-xs tracking-[0.2em] text-[#E2E2E2]/60 hover:text-[#E2E2E2] transition-colors focus:outline-none cursor-pointer"
-          >
-            REGRET DAY
-          </button>
-          <button
-            id="nav-btn-nft"
-            onClick={() => scrollToSection("regret-nft")}
-            className="font-mono text-xs tracking-[0.2em] text-[#E2E2E2]/60 hover:text-[#E2E2E2] transition-colors focus:outline-none cursor-pointer"
-          >
-            REGRET NFT
-          </button>
-          <button
-            id="nav-btn-roadmap"
-            onClick={() => scrollToSection("roadmap")}
-            className="font-mono text-xs tracking-[0.2em] text-[#E2E2E2]/60 hover:text-[#E2E2E2] transition-colors focus:outline-none cursor-pointer"
-          >
-            ROADMAP
-          </button>
-          <button
             id="nav-btn-buy"
             onClick={() => scrollToSection("terminal")}
             className="font-mono text-xs tracking-[0.2em] text-[#FF3B30] hover:text-[#E2E2E2] font-semibold transition-colors focus:outline-none cursor-pointer"
@@ -128,34 +100,6 @@ export default function Navbar() {
             className="md:hidden bg-[#0F0F10] border-b border-[#454545] overflow-hidden"
           >
             <div className="flex flex-col gap-6 px-6 py-8 font-mono">
-              <button
-                id="mob-nav-narrative"
-                onClick={() => scrollToSection("narrative")}
-                className="text-left text-sm tracking-widest text-[#E2E2E2]/70 hover:text-[#FF3B30] transition-colors py-1"
-              >
-                // NARRATIVE
-              </button>
-              <button
-                id="mob-nav-regretday"
-                onClick={() => scrollToSection("world-regret-day")}
-                className="text-left text-sm tracking-widest text-[#E2E2E2]/70 hover:text-[#FF3B30] transition-colors py-1"
-              >
-                // REGRET DAY
-              </button>
-              <button
-                id="mob-nav-nft"
-                onClick={() => scrollToSection("regret-nft")}
-                className="text-left text-sm tracking-widest text-[#E2E2E2]/70 hover:text-[#FF3B30] transition-colors py-1"
-              >
-                // REGRET NFT
-              </button>
-              <button
-                id="mob-nav-roadmap"
-                onClick={() => scrollToSection("roadmap")}
-                className="text-left text-sm tracking-widest text-[#E2E2E2]/70 hover:text-[#FF3B30] transition-colors py-1"
-              >
-                // ROADMAP
-              </button>
               <button
                 id="mob-nav-terminal"
                 onClick={() => scrollToSection("terminal")}

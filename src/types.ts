@@ -9,7 +9,3 @@ export interface Story {
   text: string;
   createdAt: Date | null;
 }
-
-export interface TickerMessage {
-  text: string;
-}
